@@ -1,3 +1,85 @@
  // Import all partials
+ font-face
+   font-family: 'hellena';
+   src: url("fonts/hellena-webfont.eot");
+   src: url("fonts/hellena-webfont.eot?#iefix") format('embedded-opentype'), url("fonts/hellena-webfont.woff2") format('woff2'), url("fonts/hellena-webfont.woff") format('woff'), url("fonts/hellena-webfont.ttf") format('truetype'), url("fonts/hellena-webfont.svg#hellena_scriptregular") format('svg');
+   font-weight: normal;
+   font-style: normal;
 
-@require './_*.styl'
+html, body
+  margin 0
+  font-size 20px
+  font-family sans-serif
+
+.main
+  display flex
+  flex-flow column
+  height: 100vh
+
+.workspace
+  display flex
+  flex-flow column
+  flex 1
+  overflow-y scroll
+
+.palette
+  display flex
+  flex-grow 1
+  flex-shrink 0
+
+.controls
+  display flex
+  flex-flow row
+  align-items center
+  margin-left 42%
+
+.color
+  flex 1
+
+.delete
+  font-size 20px
+  color white
+  border transparent
+  background-color transparent
+  text-shadow  2px 2px 0 rgba(0, 0, 0, 0.4)
+
+.add
+  margin-left 527px
+  background-color #BBCAD7
+
+.button-block
+  align-items center
+  flex-flow column
+  display flex
+  justify-content space-around
+  margin 0 6px
+
+  button
+    border-radius 50%
+    height 40px
+    width 40px
+    margin 6px
+    align-self center
+    border none
+    background-color aliceblue
+
+
+// animations
+
+.fade-enter
+  opacity 0.01
+  transform scale(0.5)
+
+.fade-enter.fade-enter-active
+  opacity 1
+  transform scale(1)
+  transition opacity 300ms ease-in, transform 500ms ease-in
+
+.fade-leave
+  opacity 1
+  transform scale(1)
+
+.fade-leave.fade-leave-active
+  opacity 0.01
+  transform scale(0.5)
+  transition opacity 400ms ease-in, transform 500ms ease-in
